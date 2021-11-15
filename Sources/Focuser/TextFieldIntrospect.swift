@@ -32,6 +32,7 @@ public struct FocusModifier<Value: FocusStateCompliant & Hashable>: ViewModifier
                     focusedField = focusedField?.next ?? Value.last
                     
                     if equals.hashValue == Value.last.hashValue {
+						focusedField = nil
                         tf.resignFirstResponder()
                     }
                 }
